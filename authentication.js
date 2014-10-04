@@ -1,10 +1,10 @@
-var passport = require('passport')
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
-var GithubStrategy = require('passport-github').Strategy;
-var GoogleStrategy = require('passport-google').Strategy;
-var User = require('./user.js')
-var config = require('./oauth.js')
+var passport = require('passport'),
+FacebookStrategy = require('passport-facebook').Strategy,
+TwitterStrategy = require('passport-twitter').Strategy,
+GithubStrategy = require('passport-github').Strategy,
+GoogleStrategy = require('passport-google').Strategy,
+User = require('./user.js'),
+config = require('./oauth.js');
 
 // config
 module.exports = passport.use(new FacebookStrategy({
@@ -24,8 +24,8 @@ module.exports = passport.use(new FacebookStrategy({
         created: Date.now()
       });
       user.save(function(err) {
-        if(err) { 
-          console.log(err); 
+        if(err) {
+          console.log(err);
         } else {
           console.log("saving user ...");
           done(null, user);
@@ -52,8 +52,8 @@ passport.use(new TwitterStrategy({
        created: Date.now()
      });
      user.save(function(err) {
-       if(err) { 
-         console.log(err); 
+       if(err) {
+         console.log(err);
        } else {
          console.log("saving user ...");
          done(null, user);
@@ -80,8 +80,8 @@ passport.use(new GithubStrategy({
        created: Date.now()
      });
      user.save(function(err) {
-       if(err) { 
-         console.log(err); 
+       if(err) {
+         console.log(err);
        } else {
          console.log("saving user ...");
          done(null, user);
@@ -107,8 +107,8 @@ passport.use(new GoogleStrategy({
        created: Date.now()
      });
      user.save(function(err) {
-       if(err) { 
-         console.log(err); 
+       if(err) {
+         console.log(err);
        } else {
          console.log("saving user ...");
          done(null, user);
