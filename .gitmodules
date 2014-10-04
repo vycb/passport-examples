@@ -1,0 +1,3 @@
+[submodule "examples/passportjs"]
+	path = examples/passportjs
+	url = ../PassportJS-Authentication.git
